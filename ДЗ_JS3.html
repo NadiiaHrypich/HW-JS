@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   1. Сделать собственные примеры методов применяемых для массивов.
+
+      // join
+      var numbers = [1, 2, 3, 4];
+      document.write(numbers);
+      var changed_array = numbers.join(" / ");
+      document.write("<br/><br />");
+      document.write(changed_array);
+      document.write('<ul style="list-style-image:url(bullet.png)"><li>');
+      var changed_array = numbers.join("</li><li>");
+      document.write(changed_array);
+      document.write("</li></ul>");
+
+      // concat
+      var numbers = [1, 2, 3, 4];
+      var new_numbers = [5, 6, 7, 8];
+      var all_numbers = numbers.concat(new_numbers);
+      document.write(all_numbers);
+
+      // reverse
+      var numbers = [1, 2, 3, 4];
+      numbers = numbers.reverse();
+      document.write("<br/><br />");
+      document.write(numbers);
+      document.write("<br/><br />");
+
+      // slice
+      var numbers = [1, 2, 3, 4, 5, 6];
+      var part = numbers.slice(0, 3);
+      document.write("<br/><br />");
+      document.write(part);
+      document.write("<br/><br />");
+      part = numbers.slice(2);
+      document.write("<br/><br />");
+      document.write(part);
+      document.write("<br/><br />");
+      part = numbers.slice(2, -1);
+      document.write("<br/><br />");
+      document.write(part);
+      document.write("<br/><br />");
+
+      // splice
+      var numbers = [1, 2, 3, 4, 5, 6];
+      var new_numbers = numbers.splice(1, 2);
+      document.write("<br/><br />");
+      document.write(new_numbers);
+      document.write("<br/><br />");
+      numbers.splice(1, 0, 7, 8);
+      document.write("<br/><br />");
+      document.write(numbers);
+      document.write("<br/><br />");
+
+      // sort
+      var numbers = [1, 8, 3, 4, 9, 6];
+      numbers.sort();
+      document.write("<br/><br />");
+      document.write(numbers);
+      document.write("<br/><br />");
+      numbers = [1, 18, 3, 44, 9, 6];
+      numbers.sort(function (a, b) {
+        return a - b;
+      });
+      document.write("<br/><br />");
+      document.write(numbers);
+      document.write("<br/><br />");
+
+      // push
+      var numbers = [1, 2, 3, 4, 5, 6];
+      var new_length = numbers.push(4);
+      document.write("<br/><br />");
+      document.write(numbers + " - " + numbers.length);
+      document.write("<br/><br />");
+
+      // pop
+      var numbers = [1, 2, 3, 4, 5, 6];
+      var deleteElement = numbers.pop();
+      document.write("Array after delete " + numbers + "<br>");
+      document.write("Size of array " + numbers.length + "<br>");
+      document.write("Deleted element " + deleteElement + "<br>");
+
+      // unshift
+      var numbers = [1, 2, 3, 4, 5, 6];
+      var new_length = numbers.unshift(55);
+      document.write("Array after adding " + numbers + "<br>");
+      document.write("Size of array " + numbers.length + "<br>");
+
+      // shift
+      var numbers = [1, 2, 3, 4, 5, 6];
+      var del_el = numbers.shift();
+      document.write("Array after delete " + numbers + "<br>");
+      document.write("Size of array " + numbers.length + "<br>");
+      document.write("Deleted element " + del_el + "<br>");
+
+      // 3. Определить элементы массива и вывести их значения, индексы которых лежит в указанном пределе. Предел вводит пользователь.
+      var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      var firstIndex = +prompt("Write your first number from 1 to 10");
+      var secondIndex = +prompt("Write your secondIndex number from 1 to 10");
+      var new_numbers = numbers.slice(firstIndex, secondIndex);
+      document.write("<br/><br />");
+      document.write(new_numbers);
+      ocument.write("<br/><br />");
+
+      // 4. Отсортировать массив на 10 чисел в порядке возростания. Значения принимаются от пользователя. Сортировка осушествляется методом sort().
+      var array = [];
+      var numbers = +prompt("Input 10 numbers");
+      array.push(numbers);
+      array.sort(function (a, b) {
+        return a - b;
+      });
+      document.write("<br/><br />");
+      document.write(array);
+      document.write("<br/><br />");
+
+      // 5. Создать программу, выполняющую вставку элемента в массив после элемента, значение которого укажет пользователь и место, после которого вставить.
+      var numbers = [1, 2, 3, 4, 5, 6];
+      document.write("<br/><br />");
+      document.write("Array: " + numbers);
+      document.write("<br/><br />");
+      var customNumber = +prompt("Input your number");
+      var position = +prompt("Input number position");
+      numbers.splice(position - 1, 0, customNumber);
+      document.write("<br/><br />");
+      document.write("New array: " + numbers);
+      document.write("<br/><br />");
+      // 6. Необходимо получить предпоследний элемент из массива month и вывести его на экран.
+      var month = [
+        "Январь",
+        "Февраль",
+        "Март",
+        "Апрель",
+        "Май",
+        "Июнь",
+        "Июль",
+        "Август",
+        "Сентябрь",
+        "Октябрь",
+        "Ноябрь",
+        "Декабрь",
+      ];
+      var del = month.splice(-2, 1);
+      document.write("<br/><br />");
+      document.write(del);
+      document.write("<br/><br />");
+      // 7. Создать два произвольных массива: один массив - любимая спортивная команда / модели автомобилей / города, во втором - количество игроков в команде / объем двигателя / количество жителей в городе. Объединить данные из двух массивов и вывести их в одну строку.  -->
+      var name = ["Lisa", "Paul", "Olena"];
+      var age = [15, 35, 69];
+
+      for (i = 0; i <= name.length; i++) {
+        document.write(name[i].concat(` - ${age[i]}; <br>`));
+      }
+    </script>
+  </body>
+</html>

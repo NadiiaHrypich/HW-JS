@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .articles {
+        display: flex;
+        justify-content: center;
+        border: 1px solid gray;
+        padding: 5px 10px;
+      }
+      .tab {
+        border: 1px solid black;
+        cursor: pointer;
+        width: 30%;
+        margin: 0 auto;
+        background: grey;
+        font-size: 2rem;
+        text-align: center;
+      }
+      .tab_content {
+        background-color: lightgrey;
+        transition: 1s;
+        overflow: hidden;
+        height: 150px;
+        margin: 10px;
+      }
+
+      .hide {
+        height: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="articles">
+      <div>
+        <div class="tab">Tab 1</div>
+        <div class="tab_content hide">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus
+          consectetur recusandae, alias id cupiditate distinctio doloremque
+          asperiores. Ut fugiat, ea, recusandae animi velit nesciunt incidunt
+          suscipit sed, perspiciatis repudiandae distinctio? Delectus, beatae
+          facere ab facilis amet aliquid mollitia est sed impedit sunt nulla
+          officiis officia numquam accusantium fugit minus odio autem iusto
+          repudiandae? Commodi repudiandae voluptas doloribus, corporis fugiat
+          quos. Corrupti repudiandae, ipsam mollitia inventore doloremque
+          praesentium, iste, voluptates odit nisi recusandae nulla esse odio
+          totam sit consequuntur corporis debitis molestiae similique adipisci
+          qui ex voluptatum autem. Molestiae, eligendi velit!
+        </div>
+      </div>
+      <div>
+        <div class="tab">Tab 2</div>
+        <div class="tab_content hide">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+          tenetur non quis expedita commodi culpa laborum ipsam aliquid adipisci
+          placeat. Officia quod porro, assumenda iste accusamus dolor dolore
+          aspernatur minus! Assumenda quia totam natus velit veniam sit. Itaque
+          omnis quae veritatis nesciunt veniam quibusdam at? Sint eum id
+          voluptatum accusantium labore laudantium amet harum debitis, laborum,
+          ut deserunt libero rerum. Atque maxime nam ratione distinctio
+          aspernatur quidem reiciendis nostrum aliquam labore unde! Molestias
+          dicta quis quisquam doloremque, enim ipsam quam amet culpa hic sit!
+          Dignissimos saepe officiis numquam delectus magni?
+        </div>
+      </div>
+      <div>
+        <div class="tab">Tab 3</div>
+        <div class="tab_content hide">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic sit id
+          vero! Non laudantium temporibus reprehenderit, tempore alias minima!
+          Sapiente enim dolorum ratione facilis et animi distinctio commodi
+          voluptatum exercitationem. Omnis, velit. Porro, saepe! Ut voluptatibus
+          facilis modi illum deleniti, illo est perspiciatis provident
+          repellendus aut distinctio blanditiis exercitationem quo pariatur
+          placeat explicabo soluta. Veritatis ab at a iusto rerum. Doloremque
+          quae iure velit temporibus nostrum nisi laborum neque consequuntur,
+          consequatur illum ratione dignissimos placeat ab expedita repudiandae
+          ut dolorum totam voluptatum asperiores odit fuga ullam? Accusamus
+          voluptates eveniet deleniti.
+        </div>
+      </div>
+    </div>
+    <script>
+      var tabsItem = document.querySelectorAll(".tab");
+      var tabsItemContent = document.querySelectorAll(".tab_content");
+
+      function hideAllTabs() {
+        for (let i = 0; i < tabsItem.length; i++) {
+          tabsItemContent[i].classList.add("hide");
+        }
+      }
+
+      for (let i = 0; i < tabsItem.length; i++) {
+        tabsItem[i].addEventListener("click", function () {
+          hideAllTabs();
+          tabsItemContent[i].classList.remove("hide");
+        });
+      }
+    </script>
+  </body>
+</html>
