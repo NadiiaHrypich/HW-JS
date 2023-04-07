@@ -1,0 +1,259 @@
+@import url(./animation.css);
+
+:root {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+}
+header {
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+}
+
+header .logo {
+  align-self: stretch;
+}
+header .logo img {
+  height: 100%;
+}
+.nav {
+  display: flex;
+  list-style: none;
+  width: 60%;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  margin-right: 2rem;
+  font-size: 3.6rem;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.screen {
+  min-height: 90vh;
+  border: 3px solid black;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.box {
+  display: flex;
+  height: 90vh;
+  justify-content: space-between;
+}
+
+.box > div {
+  width: 22%;
+  box-sizing: border-box;
+}
+/*
+@keyframes img-show-top {
+    from {
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes img-show-bottom {
+    from {
+        transform: translateY(100vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}*/
+
+.left-one,
+.right-one {
+  background: silver;
+  height: 60%;
+  align-self: center;
+  border-radius: 10px;
+  transform: translateY(-100vh);
+  animation: img-show-top 1.5s linear 1 forwards;
+}
+
+.left-two {
+  transform: translateY(100vh);
+  animation: img-show-bottom 2s linear 1 forwards;
+}
+
+.right-two {
+  transform: translateY(100vh);
+  animation: img-show-bottom 3s linear 1 forwards;
+}
+.left-two,
+.right-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-two > div,
+.right-two > div {
+  border-radius: 10px;
+}
+
+.left-two > div:first-child {
+  height: 40%;
+  background-color: green;
+  margin-bottom: 1.5rem;
+}
+
+.left-two > div:last-child {
+  height: 40%;
+  background-color: orange;
+}
+
+.right-two > div:first-child {
+  height: 40%;
+  background-color: blue;
+  margin-bottom: 1.5rem;
+}
+
+.right-two > div:last-child {
+  height: 40%;
+  background-color: yellow;
+}
+
+/*screen2*/
+.services {
+  display: flex;
+}
+
+.services .left {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.services .right {
+  width: 40%;
+}
+
+.services .left > div {
+    height: 50%;
+    width: 50%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.c {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.c + p {
+    text-align: center;
+}
+.bg {
+  background: grey;
+  width: 100%;
+  height: 100%;
+}
+
+.left_one .c {
+    background: yellow;
+}
+
+.left_two .c {
+    background: green;
+}
+
+.left_three .c {
+    background: greenyellow;
+}
+
+.left_four .c {
+    background: goldenrod;
+}
+
+.left_one {
+   top: 0;
+   left: 0;
+   animation: circle1 10s linear infinite;
+}
+
+.left_two {
+    top: 0;
+   left: 50%;
+   animation: circle2 10s linear infinite;
+}
+
+.left_three {
+    top: 50%;
+   left: 50%;
+   animation: circle3 10s linear infinite;
+}
+
+.left_four {
+    top: 50%;
+   left: 0;
+   animation: circle4 10s linear infinite;
+}
+
+/*screen 3*/
+
+.title {
+    font-size: 4rem;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.teams {
+    display: flex;
+    justify-content: space-between;
+    height: 80vh;
+    
+}
+
+.teams > div {
+    background-color: grey;
+    width: 23%;
+    border-radius: 15px;
+    position: relative;
+}
+
+.teams:hover > div {
+    filter: brightness(.5);
+}
+
+.teams > div:hover {
+    filter: none;
+}
+
+.teams .name {
+    position: absolute;
+    background: orange;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 1s;
+}
+
+.teams > div:hover .name {
+    height: 200px;
+}
